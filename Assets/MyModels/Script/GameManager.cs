@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI playerText;
     public GameObject panel;
     public SongHandler sh;
+    public GameObject buttons;
     void Start()
     {
         setupCarrots();
@@ -26,11 +27,20 @@ public class GameManager : MonoBehaviour
             {
                 panel.SetActive(true);
                 sh.enabled = false;
+                buttons.SetActive(false);
             }
             
         }
     }
-
+    public void pause()
+    {
+        if (!panel.activeInHierarchy)
+        {
+            panel.SetActive(true);
+            sh.enabled = false;
+            buttons.SetActive(false);
+        }
+    }
     public void QuitGame()
     {
         Application.Quit();
