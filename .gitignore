@@ -8,7 +8,7 @@
 /*.sln
 *.csproj.user
 *.sln.DotSettings
-
+/Build
 
 /*.log
 
