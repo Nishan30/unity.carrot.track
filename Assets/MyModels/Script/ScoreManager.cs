@@ -27,8 +27,10 @@ public class ScoreManager : MonoBehaviour
             {
                 GameObject.Find("GameManager").GetComponent<GameManager>().updateScore(3);
             }
-            gameObject.SetActive(false);
+            
+            GameObject.Find("GameManager").GetComponent<GameManager>().removeCarrot(this.gameObject);
             
         }
     }
+
 }

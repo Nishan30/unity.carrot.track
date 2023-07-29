@@ -75,6 +75,17 @@ public class GameManager : MonoBehaviour
 
         }
     }
+    public void removeCarrot(GameObject obj)
+    {
+        StartCoroutine(afterCollision(obj));
+    }
+    public IEnumerator afterCollision(GameObject obj)
+    {
+        obj.SetActive(false);
+        yield return new WaitForSeconds(30);
+        obj.transform.parent.transform.GetChild(Random.Range(0, 2)).gameObject.SetActive(true);
+        Debug.Log("hereee");
+    }
     public void playButton()
     {
         playerText.text = "Resume";
